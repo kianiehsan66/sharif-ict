@@ -1,4 +1,198 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <div (click)="back()">
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <!-- <form *ngIf="accountForm" [formGroup]="accountForm"> -->
+
+  <ion-list>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+
+        </ion-col>
+        <ion-col class="ion-align-self-center">
+          <img class="img-profile" src="assets/img/irisapp.png">
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label style="align-self: flex-start;" position="stacked" color="primary">نام</ion-label>
+            <ion-input type="text" spellcheck="false" autocapitalize="off" required [(ngModel)]="user.name">
+            </ion-input>
+            <!-- <ion-input formControlName="name" name="name" spellcheck="false" autocapitalize="off" required>
+                            </ion-input> -->
+            <!-- <ion-text color="danger" *ngIf="accountForm.controls.name.invalid && accountForm.controls.name.touched">
+                                            <p>
+                                              وارد کردن نام الزامی است
+                                            </p>
+                                          </ion-text> -->
+          </ion-item>
+
+        </ion-col>
+        <ion-col>
+          <ion-item>
+
+            <ion-label style="align-self: flex-start;" position="stacked" color="primary">نام خانوادگی</ion-label>
+            <ion-input required [(ngModel)]="user.family"></ion-input>
+            <!-- <ion-input formControlName="family" name="family" type="text" spellcheck="false" autocapitalize="off"
+                                                required>
+                                              </ion-input> -->
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+
+            <ion-label style="align-self: flex-start;" position="stacked" color="primary">سن</ion-label>
+            <ion-input required [(ngModel)]="user.age"></ion-input>
+            <!-- <ion-input formControlName="age" name="age" type="number" spellcheck="false" autocapitalize="off" required>
+            </ion-input> -->
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+
+            <ion-label style="align-self: flex-start;" position="stacked" color="primary">وزن</ion-label>
+            <ion-input required [(ngModel)]="user.weight"></ion-input>
+            <!-- <ion-input formControlName="وزن" name="وزن" type="number" spellcheck="false" autocapitalize="off" required>
+                      </ion-input> -->
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>استان</ion-label>
+            <ion-select [interfaceOptions]="provinceActionSheetOptions" interface="popover" cancelText="لغو"
+              [(ngModel)]="user.province">
+              <ion-select-option value="تهران">تهران</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>شهر</ion-label>
+            <ion-select [interfaceOptions]="cityActionSheetOptions" interface="popover" cancelText="لغو"
+              [(ngModel)]="user.city">
+              <ion-select-option value="تهران">
+                تهران
+              </ion-select-option>
+              <ion-select-option value="ورامین">
+                ورامین
+              </ion-select-option>
+              <ion-select-option value="اسلام شهر">
+                اسلام شهر
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item button (click)="getLocation()" dir="rtl">
+            <ion-icon slot="start" name="location-outline"></ion-icon>
+            <ion-label>
+              دریافت موقعیت مکانی
+            </ion-label>
+            <ion-icon slot="end" name="chevron-back-outline"></ion-icon>
+          </ion-item>
+
+        </ion-col>
+
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-radio-group [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+              <ion-list-header>
+                <ion-label> جنسیت</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                <ion-label>زن</ion-label>
+                <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>مرد</ion-label>
+                <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+
+            </ion-radio-group>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>سابقه بیماری تنفسی</ion-label>
+            <!-- <ion-toggle formControlName="gender">
+                                      </ion-toggle> -->
+            <ion-toggle>
+            </ion-toggle>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>فشار خون</ion-label>
+            <!-- <ion-toggle formControlName="gender">
+                                              </ion-toggle> -->
+            <ion-toggle>
+            </ion-toggle>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>دیابت</ion-label>
+            <!-- <ion-toggle formControlName="gender">
+                                                        </ion-toggle> -->
+            <ion-toggle>
+            </ion-toggle>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="primary" (click)="submit()">ارسال</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+
+</ion-content>
+
+
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Tab 1
@@ -14,4 +208,4 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+</ion-content> -->

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>شرح وضعیت روزانه</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <div onClick="window.history.back()">
+        <ion-icon slot="start" name="chevron-forward-outline"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let question of allQuestions">
+    <ion-card-header>
+      <ion-card-subtitle>{{question.title}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+        <ion-radio-group>
+
+          <ion-item>
+            <ion-label>بله</ion-label>
+            <ion-radio value="2" [disabled]="disableForm"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>تا حدودی</ion-label>
+            <ion-radio value="1" [disabled]="disableForm"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>خیر</ion-label>
+            <ion-radio value="0" [disabled]="disableForm"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="goToindividual()">
+    ثبت اطلاعات
+  </ion-button>
+</ion-content>

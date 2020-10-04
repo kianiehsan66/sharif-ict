@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "297231318234",
+    "firebase_url": "https://sonorous-dragon-241921.firebaseio.com",
+    "project_id": "sonorous-dragon-241921",
+    "storage_bucket": "sonorous-dragon-241921.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297231318234:android:8f55cfd7978c1c19d739e3",
+        "android_client_info": {
+          "package_name": "com.devdactic.devpush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297231318234-5kr7blco8el3o0c0jujvunciq9o9vg4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-yTw14dLOzW7aMbrOa327tIrTkkhKVUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297231318234-5kr7blco8el3o0c0jujvunciq9o9vg4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
