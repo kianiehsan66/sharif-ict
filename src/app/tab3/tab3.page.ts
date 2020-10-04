@@ -23,7 +23,7 @@ export class Tab3Page {
   ]
 
   searchResult: Place[] = [
-    { id: 1, title: 'بانک ملی شعبه بازار', adderss: 'addersssadfasd sdf asf as ', tel: 'asdasd' },
+    { id: 1, title: 'بانک ملی شعبه 2', adderss: 'addersssadfasd sdf asf as ', tel: 'asdasd' },
     { id: 2, title: 'فروشگاه کوروش', adderss: 'addersssadfasd sdf asf as ', tel: 'asdasd' },
     { id: 3, title: 'دانشگاه تهران', adderss: 'addersssadfasd sdf asf as ', tel: 'asdasd' },
     { id: 4, title: 'فروشگاه رفاه', adderss: 'addersssadfasd sdf asf as ', tel: 'asdasd' }
