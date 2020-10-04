@@ -25,11 +25,8 @@ export class QuestionListPage implements OnInit {
       this.disableForm = this.activatedRoute.snapshot.params['disabled']
     }
 
-    this.qstService.getDailyQuestions().subscribe(res => {
-      this.allQuestions = res as Question[];
-      console.warn(this.allQuestions);
-
-    })
+    this.allQuestions = this.qstService.getDailyQuestions()
+    console.warn(this.allQuestions);
   }
 
   goToindividual() {
