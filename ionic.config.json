@@ -1,0 +1,7 @@
+{
+  "name": "sharif-ict",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
